@@ -444,3 +444,8 @@ img src="imagenes/home.jpg"
 img src="imagenes/colec.jpg"
 img src="imagenes/doc1.jpg"
 img src="imagenes/doc2.jpg"
+
+En trello en la lista BACKLOG he añadido 11 HU, que a continuación se ve con la captura de pantalla:
+img src="imagenes/trello1.jpg"
+img src="imagenes/trello12.jpg"
+img src="imagenes/trello123.jpg"
