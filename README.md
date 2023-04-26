@@ -437,3 +437,14 @@ https://github.com/UJA-Desarrollo-Agil/descripcion-proyecto-microservicios-perso
 El código en ese repositorio muestra una aplicación similar, pero con mucha más funcionalidad que esta plantilla: acceso a base de datos remota, listado de documentos recuperados de la BBDD, peticiones entre distintos microservicios, etc.
 
 Además, incluye documentación sobre dicho código y un vídeo descriptivo de cómo se ha realizado y cómo funciona la aplicación de ejemplo.
+
+
+Capturas de pantalla de fauna:
+img src="imagenes/fauna1.jpg"
+img src="imagenes/fauna2.jpg"
+img src="imagenes/fauna3.jpg"
+
+En trello en la lista BACKLOG he añadido 11 HU, que a continuación se ve con la captura de pantalla:
+img src="imagenes/trello1.jpg"
+img src="imagenes/trello2.jpg"
+img src="imagenes/trello3.jpg"
