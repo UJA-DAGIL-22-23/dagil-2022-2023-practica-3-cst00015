@@ -1,4 +1,4 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/hneiFYl3)
+[![Review Assignment Due Date]    (https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/hneiFYl3)
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10909857&assignment_repo_type=AssignmentRepo)
 # *Plantilla Práctica Microservicios*: descripción de la aplicación
 
@@ -437,3 +437,65 @@ https://github.com/UJA-Desarrollo-Agil/descripcion-proyecto-microservicios-perso
 El código en ese repositorio muestra una aplicación similar, pero con mucha más funcionalidad que esta plantilla: acceso a base de datos remota, listado de documentos recuperados de la BBDD, peticiones entre distintos microservicios, etc.
 
 Además, incluye documentación sobre dicho código y un vídeo descriptivo de cómo se ha realizado y cómo funciona la aplicación de ejemplo.
+
+Carlos Soto Torres
+cst00015@red.ujaen.es
+Capturas de pantalla de fauna:
+img src="imagenes/fauna1.jpg"
+img src="imagenes/fauna2.jpg"
+img src="imagenes/fauna3.jpg"
+
+En trello en la lista BACKLOG he añadido 11 HU, que a continuación se ve con la captura de pantalla:
+img src="imagenes/trello1.jpg"
+img src="imagenes/trello2.jpg"
+img src="imagenes/trello3.jpg"
+img src="imagenes/trellofinal.jpg"
+Url tablero trello: https://trello.com/b/4NVUH7k2/pr%C3%A1ctica-3
+
+Implementación de las historias de usuario:
+1. img src="imagenes/HU1.jpg"  Mostrar info del autor.
+2. img src="imagenes/HU2.jpg" Ver lista nombres.
+3. img src="imagenes/HU3.jpg" Ver lista nombres ordenados.
+4. img src="imagenes/HU4.jpg" Ver lista datos.
+5. img src="imagenes/HU5.jpg" Ver datos específicos.
+6. img src="imagenes/HU6.jpg" Ver datos por criterio.
+7. img src="imagenes/HU8.jpg" Ver datos por varios criterios.
+
+Hay 2 HU que no he implementado al final, la de borrar y añadir y la de modificar no he conseguido que funcione.
+Al probar los spec:
+PS C:\Users\sotot\OneDrive\Documentos\3ºIngenieríaInformática\Desarrollo Ágil\dagil-2022-2023-practica-3-cst00015\dagil-2022-2023-practica-3-cst00015\dagil-2022-2023-practica-3-cst00015\front-end\static-files\js> npm test
+
+> front-end@1.0.0 test
+> jasmine
+
+Randomized with seed 13588
+Started
+Aplicación Front-End escuchando en puerto 8000!
+..
+
+
+2 specs, 0 failures
+Finished in 0.081 seconds
+Randomized with seed 13588 (jasmine --random=true --seed=13588)
+
+
+PS C:\Users\sotot\OneDrive\Documentos\3ºIngenieríaInformática\Desarrollo Ágil\dagil-2022-2023-practica-3-cst00015\dagil-2022-2023-practica-3-cst00015\dagil-2022-2023-practica-3-cst00015\ms-plantilla\spec> npm test
+
+> ms-plantilla@1.0.0 test
+> jasmine
+
+Randomized with seed 66345
+Started
+Microservicio PLANTILLA ejecutándose en puerto 8002!
+.......
+
+
+7 specs, 0 failures
+Finished in 0.644 seconds
+Randomized with seed 66345 (jasmine --random=true --seed=66345)
+
+
+Url github:https://github.com/UJA-DAGIL-22-23/dagil-2022-2023-practica-3-cst00015
+
+Url realese : https://github.com/UJA-DAGIL-22-23/dagil-2022-2023-practica-3-cst00015/releases/tag/v1.0
+El fichero donde he trabajado se encuentra dentro de la rama trabajando.

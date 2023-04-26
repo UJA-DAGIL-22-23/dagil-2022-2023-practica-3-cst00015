@@ -10,14 +10,18 @@
 
 
 // Necesario para conectar a la BBDD faunadb
+
+const fetch=require("node-fetch");
+const URL_MS_PLANTILLA="http://localhost:8002";
+
 const faunadb = require('faunadb'),
     q = faunadb.query;
 
 const client = new faunadb.Client({
-    secret: '¿¿¿ CLAVE SECRETA EN FAUNA PARA ESTA BBDD???',
+    secret: 'fnAFB1-K5tAAzZWQJybwlXSE96yZAg7iqkH3kS9b',
 });
 
-const COLLECTION = "¿¿¿ COLECCION ???"
+const COLLECTION = "Patinajeartístico"
 
 // CALLBACKS DEL MODELO
 
@@ -93,14 +97,217 @@ const CB_OTHERS = {
         try {
             CORS(res).status(200).json({
                 mensaje: "Microservicio MS Plantilla: acerca de",
-                autor: "¿¿¿ AUTOR ???",
-                email: "¿¿¿ EMAIL ???",
-                fecha: "¿¿¿ FECHA ???"
+                autor: "Carlos Soto Torres",
+                email: "cst00015@red.ujaen.es",
+                fecha: "abril, 2023"
             });
         } catch (error) {
             CORS(res).status(500).json({ error: error.description })
         }
     },
+
+    /**
+     * 
+     */
+    listaNombres: async (req, res) => {  
+        
+        try {
+            let jugadores = await client.query(
+                q.Map(
+                    q.Paginate(q.Documents(q.Collection("Patinajeartístico"))),
+                    q.Lambda("X", q.Get(q.Var("X")))
+                )
+            )
+            CORS(res)
+                .status(200)
+                .json(jugadores)
+        } catch (error) {
+            CORS(res).status(500).json({ error: error.description })
+        }
+        
+       /*
+        try {
+            CORS(res).status(200).json({ mensaje: "Microservicio MS Plantilla: listanombres" });
+        } catch (error) {
+            CORS(res).status(500).json({ error: error.description })
+        }
+        */
+    },
+    /**
+    * Método para obtener una persona de la BBDD a partir de su ID
+    * @param {*} req Objeto con los parámetros que se han pasado en la llamada a esta URL 
+    * @param {*} res Objeto Response con las respuesta que se va a dar a la petición recibida
+    */
+    getPorId: async (req, res) => {
+        try {
+            // console.log( "getPorId req", req.params.idPersona ) // req.params contiene todos los parámetros de la llamada
+            let persona = await client.query(
+                q.Get(q.Ref(q.Collection('Patinajeartístico'), req.params.idPersona))
+            )
+            // console.log( persona ) // Para comprobar qué se ha devuelto en persona
+            CORS(res)
+                .status(200)
+                .json(persona)
+        } catch (error) {
+            CORS(res).status(500).json({ error: error.description })
+        }
+    },
+
+    /**
+    * Método para obtener una persona de la BBDD a partir de su ID
+    * @param {*} req Objeto con los parámetros que se han pasado en la llamada a esta URL 
+    * @param {*} res Objeto Response con las respuesta que se va a dar a la petición recibida
+    */
+    getPorNombre: async (req, res) => {
+        try {
+            // console.log( "getPorId req", req.params.idPersona ) // req.params contiene todos los parámetros de la llamada
+            let persona = await client.query(
+                q.Get(q.Ref(q.Collection('Patinajeartístico'), req.params.idPersona))
+            )
+            // console.log( persona ) // Para comprobar qué se ha devuelto en persona
+            CORS(res)
+                .status(200)
+                .json(persona)
+        } catch (error) {
+            CORS(res).status(500).json({ error: error.description })
+        }
+    },
+    /**
+    * Método para ocambiar los datos de una persona
+    * @param {*} req Objeto con los parámetros que se han pasado en la llamada a esta URL 
+    * @param {*} res Objeto Response con las respuesta que se va a dar a la petición recibida
+    */
+    setNombre: async (req, res) => {
+        //console.log("setTodo req.body", req) // req.body contiene todos los parámetros de la llamada
+        try {
+            let valorDevuelto = {}
+            // Hay que comprobar Object.keys(req.body).length para saber si req.body es objeto "normal" o con problemas
+            // Cuando la llamada viene de un formulario, se crea una sola entrada, con toda la info en una sola key y el value está vacío.
+            // Cuando la llamada se hace con un objeto (como se hace desde el server-spec.js), el value No está vacío.
+            let data = (Object.values(req.body)[0] === '') ? JSON.parse(Object.keys(req.body)[0]) : req.body
+            //console.log("SETTODO data es", data)
+            let persona = await client.query(
+                q.Update(
+                    q.Ref(q.Collection(COLLECTION), data.id_persona),
+                    {
+                        data: {
+                            nombre: data.nombre_persona,
+                        },
+                    },
+                )
+            )
+                .then((ret) => {
+                    valorDevuelto = ret
+                    //console.log("Valor devuelto ", valorDevuelto)
+                    CORS(res)
+                        .status(200)
+                        .header( 'Content-Type', 'application/json' )
+                        .json(valorDevuelto)
+                })
+
+        } catch (error) {
+            CORS(res).status(500).json({ error: error.description })
+        }
+    },
+
+    /**
+     * 
+     */
+    listaNombresAlfabeticos: async (req, res) => {
+            try {
+                let jugadores = await client.query(
+                    q.Map(
+                        q.Paginate(q.Documents(q.Collection("Patinajeartístico"))),
+                        q.Lambda("X", q.Get(q.Var("X")))
+                    )
+                )
+                CORS(res)
+                    .status(200)
+                    .json(jugadores)
+            } catch (error) {
+                CORS(res).status(500).json({ error: error.description })
+            }            
+    },
+    
+    /**
+     * 
+     */
+    listaDatos: async (req, res) => {
+        try {
+            let jugadores = await client.query(
+                q.Map(
+                    q.Paginate(q.Documents(q.Collection("Patinajeartístico"))),
+                    q.Lambda("X", q.Get(q.Var("X")))
+                )
+            )
+            CORS(res)
+                .status(200)
+                .json(jugadores)
+        } catch (error) {
+            CORS(res).status(500).json({ error: error.description })
+        }  
+    },
+
+     /**
+     * 
+     */
+     listaDatosOrdenados: async (req, res) => {
+        try {
+            let jugadores = await client.query(
+                q.Map(
+                    q.Paginate(q.Documents(q.Collection("Patinajeartístico"))),
+                    q.Lambda("X", q.Get(q.Var("X")))
+                )
+            )
+            CORS(res)
+                .status(200)
+                .json(jugadores)
+        } catch (error) {
+            CORS(res).status(500).json({ error: error.description })
+        }
+    },
+
+    /**
+     * 
+     */
+    listaPorNombre: async (req, res) => {
+        try {
+            let jugadores = await client.query(
+                q.Map(
+                    q.Paginate(q.Documents(q.Collection("Patinajeartístico"))),
+                    q.Lambda("X", q.Get(q.Var("X")))
+                )
+            )
+            CORS(res)
+                .status(200)
+                .json(jugadores)
+        } catch (error) {
+            CORS(res).status(500).json({ error: error.description })
+        }
+    },
+
+    /**
+     * 
+     */
+    listaPersonaUnica: async (req, res) => {
+        try {
+            CORS(res).status(200).json({ mensaje: "Microservicio MS Plantilla: listadatos esp" });
+        } catch (error) {
+            CORS(res).status(500).json({ error: error.description })
+        }
+    },
+    /**
+     * 
+     */
+    modificar: async (req, res) => {
+        try {
+            CORS(res).status(200).json({ mensaje: "Microservicio MS Plantilla: modificar" });
+        } catch (error) {
+            CORS(res).status(500).json({ error: error.description })
+        }
+    },
+
+   
 
 }
 
