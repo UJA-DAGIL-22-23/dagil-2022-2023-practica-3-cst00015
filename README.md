@@ -438,14 +438,61 @@ El código en ese repositorio muestra una aplicación similar, pero con mucha m�
 
 Además, incluye documentación sobre dicho código y un vídeo descriptivo de cómo se ha realizado y cómo funciona la aplicación de ejemplo.
 
-
+Carlos Soto Torres
+cst00015@red.ujaen.es
 Capturas de pantalla de fauna:
-img src="imagenes/home.jpg"
-img src="imagenes/colec.jpg"
-img src="imagenes/doc1.jpg"
-img src="imagenes/doc2.jpg"
+img src="imagenes/fauna1.jpg"
+img src="imagenes/fauna2.jpg"
+img src="imagenes/fauna3.jpg"
 
 En trello en la lista BACKLOG he añadido 11 HU, que a continuación se ve con la captura de pantalla:
 img src="imagenes/trello1.jpg"
-img src="imagenes/trello12.jpg"
-img src="imagenes/trello123.jpg"
+img src="imagenes/trello2.jpg"
+img src="imagenes/trello3.jpg"
+img src="imagenes/trellofinal.jpg"
+Url tablero trello: https://trello.com/b/4NVUH7k2/pr%C3%A1ctica-3
+
+Implementación de las historias de usuario:
+1. img src="imagenes/HU1.jpg"  Mostrar info del autor.
+2. img src="imagenes/HU2.jpg" Ver lista nombres.
+3. img src="imagenes/HU3.jpg" Ver lista nombres ordenados.
+4. img src="imagenes/HU4.jpg" Ver lista datos.
+5. img src="imagenes/HU5.jpg" Ver datos específicos.
+6. img src="imagenes/HU6.jpg" Ver datos por criterio.
+7. img src="imagenes/HU8.jpg" Ver datos por varios criterios.
+
+Hay 2 HU que no he implementado al final, la de borrar y añadir y la de modificar no he conseguido que funcione.
+Al probar los spec:
+PS C:\Users\sotot\OneDrive\Documentos\3ºIngenieríaInformática\Desarrollo Ágil\dagil-2022-2023-practica-3-cst00015\dagil-2022-2023-practica-3-cst00015\dagil-2022-2023-practica-3-cst00015\front-end\static-files\js> npm test
+
+> front-end@1.0.0 test
+> jasmine
+
+Randomized with seed 13588
+Started
+Aplicación Front-End escuchando en puerto 8000!
+..
+
+
+2 specs, 0 failures
+Finished in 0.081 seconds
+Randomized with seed 13588 (jasmine --random=true --seed=13588)
+
+
+PS C:\Users\sotot\OneDrive\Documentos\3ºIngenieríaInformática\Desarrollo Ágil\dagil-2022-2023-practica-3-cst00015\dagil-2022-2023-practica-3-cst00015\dagil-2022-2023-practica-3-cst00015\ms-plantilla\spec> npm test
+
+> ms-plantilla@1.0.0 test
+> jasmine
+
+Randomized with seed 66345
+Started
+Microservicio PLANTILLA ejecutándose en puerto 8002!
+.......
+
+
+7 specs, 0 failures
+Finished in 0.644 seconds
+Randomized with seed 66345 (jasmine --random=true --seed=66345)
+
+
+Url github:https://github.com/UJA-DAGIL-22-23/dagil-2022-2023-practica-3-cst00015

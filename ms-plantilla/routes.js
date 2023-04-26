@@ -33,6 +33,119 @@ router.get("/acercade", async (req, res) => {
     }
 });
 
+/**
+ * Ruta Lista Nombres
+ */
+router.get("/listanombres", async (req, res) => {
+    try {
+        await callbacks.listaNombres(req, res)
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+/**
+ * Devuelve los datos de la persona con el id pasado
+ */
+router.get("/getPorId/:idPersona", async (req, res) => {
+    try {
+        await callbacks.getPorId(req, res)
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+/**
+ * Devuelve los datos de la persona con el id pasado
+ */
+router.get("/getPorNombre/:Nombre", async (req, res) => {
+    try {
+        await callbacks.getPorNombre(req, res)
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+/**
+ * Modifica el email de la persona con el id pasado
+ */
+router.post("/setNombre", async (req, res) => {
+    try {
+        await callbacks.setNombre(req, res)
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+/**
+ * Ruta Lista Nombres Alfabeticos
+ */
+router.get("/listanombresalfabeticos", async (req, res) => {
+    try {
+        await callbacks.listaNombresAlfabeticos(req, res)
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+/**
+ * Ruta Lista Datos
+ */
+router.get("/listadatos", async (req, res) => {
+    try {
+        await callbacks.listaDatos(req, res)
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+
+/**
+ * Ruta Lista Datos Ordenados Por nombre
+ */
+router.get("/listadatosordenados", async (req, res) => {
+    try {
+        await callbacks.listaDatosOrdenados(req, res)
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+/**
+ * Ruta Lista Por nombre
+ */
+router.get("/listapornombre", async (req, res) => {
+    try {
+        await callbacks.listaPorNombre(req, res)
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+
+/**
+ * Ruta Lista persoan unica
+ */
+router.get("/listapersonaunica", async (req, res) => {
+    try {
+        await callbacks.listaPersonaUnica(req, res)
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+/**
+ * Ruta Modificar
+ */
+router.get("/modificar", async (req, res) => {
+    try {
+        await callbacks.modificar(req, res)
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+
 
 
 /**
