@@ -440,12 +440,11 @@ Además, incluye documentación sobre dicho código y un vídeo descriptivo de c
 
 
 Capturas de pantalla de fauna:
-img src="imagenes/home.jpg"
-img src="imagenes/colec.jpg"
-img src="imagenes/doc1.jpg"
-img src="imagenes/doc2.jpg"
+img src="imagenes/fauna1.jpg"
+img src="imagenes/fauna2.jpg"
+img src="imagenes/fauna3.jpg"
 
 En trello en la lista BACKLOG he añadido 11 HU, que a continuación se ve con la captura de pantalla:
 img src="imagenes/trello1.jpg"
-img src="imagenes/trello12.jpg"
-img src="imagenes/trello123.jpg"
+img src="imagenes/trello2.jpg"
+img src="imagenes/trello3.jpg"
